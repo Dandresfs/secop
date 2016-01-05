@@ -84,6 +84,19 @@ WSGI_APPLICATION = 'secop.wsgi.application'
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'secop',
+        'USER': 'diego',
+        'PASSWORD': 'maquinas2008',
+        'HOST': '',
+        'PORT': '',
+      }
+  }
+
 DATABASES['default'] =  dj_database_url.config()
 
 
