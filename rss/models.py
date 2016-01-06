@@ -6,7 +6,7 @@ from django.db import models
 
 class Grupo(models.Model):
     codigo = models.CharField(max_length=1)
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=200)
 
     def __unicode__(self):
         return self.codigo
@@ -14,7 +14,7 @@ class Grupo(models.Model):
 class Segmento(models.Model):
     grupo = models.ForeignKey(Grupo)
     segmento = models.IntegerField()
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=200)
 
     def __unicode__(self):
         return str(self.segmento)
