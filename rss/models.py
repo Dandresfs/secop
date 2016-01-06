@@ -24,4 +24,4 @@ class LinkRss(models.Model):
     link = models.URLField()
 
     def __unicode__(self):
-        return self.segmento
+        return str(self.segmento)
