@@ -26,7 +26,7 @@ class SegmentoAdmin(admin.ModelAdmin):
 admin.site.register(Segmento, SegmentoAdmin)
 
 class LinkRssAdmin(admin.ModelAdmin):
-    list_display = ['segmento','get_codigo_grupo','get_nombre_grupo','get_segmento_nombre','link']
+    list_display = ['segmento','get_codigo_grupo','get_nombre_grupo','get_segmento_nombre','get_link']
     list_filter = ['segmento__grupo__codigo']
     search_fields = ['segmento__segmento']
 
@@ -41,4 +41,9 @@ class LinkRssAdmin(admin.ModelAdmin):
     def get_segmento_nombre(self,obj):
         return obj.segmento.nombre
     get_segmento_nombre.short_description = 'Nombre de Segmento'
+
+    def get_link(self,obj):
+        return '<a href="%s">%s</a>' % (obj.link, obj.link)
+    get_link.short_description = 'Link'
+    get_link.allow_tags = True
 admin.site.register(LinkRss,LinkRssAdmin)
