@@ -17,7 +17,7 @@ class Segmento(models.Model):
     nombre = models.CharField(max_length=100)
 
     def __unicode__(self):
-        return self.segmento
+        return str(self.segmento)
 
 class LinkRss(models.Model):
     segmento = models.ForeignKey(Segmento)
